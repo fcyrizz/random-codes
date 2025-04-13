@@ -55,7 +55,7 @@
 })();
 ```
 ## Get Youtube Video Title with JS Console
-```
+```js
 (function() {
   try {
     const links = [];
@@ -111,7 +111,7 @@
 
 ## For Youtube Shorts
 ### Extract Youtube Shorts IDs with js console
-```
+```js
 (function() {
   try {
     const ids = [];
@@ -169,7 +169,7 @@
 ```
 
 ### Get the Shorts Title
-```
+```js
 (function() {
   try {
     const links = [];
