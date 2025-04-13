@@ -1,8 +1,7 @@
 # Download bulk youtube videos with python and ytdlp
 ## For Youtube Videos
-<details>
-  <summary>Extract Youtube Videos IDs with JS Console</summary>
-```
+### Extract Youtube Videos IDs with JS Console
+```js
 (function() {
   try {
     const links = [];
@@ -55,7 +54,6 @@
   }
 })();
 ```
-</details>
 ## Get Youtube Video Title with JS Console
 ```
 (function() {
