@@ -1,4 +1,47 @@
 # Download bulk youtube videos with python and ytdlp
+```python
+from yt_dlp import YoutubeDL
+
+def download_best_video(video_url, output_path='.'):
+    """Download the best quality video (video + audio)."""
+    try:
+        ydl_opts = {
+            'format': 'bestvideo+bestaudio/best',  # Highest quality with audio
+            'outtmpl': f'{output_path}/%(title)s.%(ext)s',
+            'merge_output_format': 'mp4',
+            'quiet': False,
+        }
+
+        with YoutubeDL(ydl_opts) as ydl:
+            print(f"\nDownloading: {video_url}")
+            ydl.download([video_url])
+            print("Download completed!\n")
+
+    except Exception as e:
+        print(f"Error downloading {video_url}: {e}")
+
+def main():
+    try:
+        with open('input.txt', 'r') as file:
+            video_ids = [line.strip() for line in file if line.strip()]
+        
+        if not video_ids:
+            print("No video IDs found in input.txt.")
+            return
+
+        for video_id in video_ids:
+            url = f"https://www.youtube.com/watch?v={video_id}"
+            download_best_video(url)
+
+    except FileNotFoundError:
+        print("input.txt not found. Please make sure the file exists in the script directory.")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+
+if __name__ == "__main__":
+    main()
+
+```
 ## For Youtube Videos
 ### Extract Youtube Videos IDs with JS Console
 ```js
